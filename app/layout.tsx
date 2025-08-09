@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import MenuBar from "@/components/MenuBar/MenuBar";
 import { GlobalStyles } from "@/styles/GlobalStyles";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
 };
@@ -16,7 +17,9 @@ export default function RootLayout({
       <body>
         <MenuBar />
 
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
