@@ -2,7 +2,7 @@
 
 import styled from "@emotion/styled";
 
-export const HeaderStyled = styled.h1<{color?: string}>`
+export const HeaderStyled = styled.h1<{headercolor?: string}>`
   font-size: 2rem;
-  color: ${props => props.color || 'black'};
+  color: ${props => props.headercolor || 'black'};
 `

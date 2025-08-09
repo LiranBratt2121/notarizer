@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header = ({ text, color}: HeaderProps) => {
   return (
-    <HeaderStyled color={color}>
+    <HeaderStyled headercolor={color}>
         {text}
     </HeaderStyled>
   )
