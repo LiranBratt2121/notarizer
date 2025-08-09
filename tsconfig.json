@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/dashboard.components/CaptureCircleButton"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/dashboard.components/CaptureCircleButton", "context/AuthContext.tsx"],
   "exclude": ["node_modules"]
 }
