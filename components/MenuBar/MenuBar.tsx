@@ -11,8 +11,8 @@ import { useRouter } from "next/navigation";
 interface MenuItem { id: string; name: string; target?: string; }
 
 const menuItems: MenuItem[] = [
-  { id: "1", name: "Capture", target: "/capture" },
-  { id: "2", name: "View Captured Images", target: "/view" },
+  { id: "1", name: "Capture", target: "/dashboard" },
+  { id: "2", name: "View Captured Images", target: "/apartments" },
   { id: "3", name: "Login", target: "/login" },
 ];
 
@@ -33,7 +33,7 @@ export default function MenuBar() {
       <MenuButton onClick={toggleMenu} />
 
       <MenuBarContainer $isOpen={clicked} aria-hidden={!clicked}>
-        <Header text="Menu"/>
+        <Header text="Menu" color="white"/>
 
         {menuItems.map(item => (
           <Button key={item.id} width="80%" height="5rem" onClick={() => handleNavigation(item.target)}>
