@@ -3,13 +3,14 @@ import { HeaderAbsStyled } from './HeaderAbs.styles';
 
 interface HeaderAbsProps {
     text: string;
+    size?: string;
     distanceFromTop?: string;
     color?: string;
 }
 
-const HeaderAbs = ({ text, color, distanceFromTop}: HeaderAbsProps) => {
+const HeaderAbs = ({ text, color, distanceFromTop, size}: HeaderAbsProps) => {
   return (
-    <HeaderAbsStyled color={color} distancefromtop={distanceFromTop}>
+    <HeaderAbsStyled color={color} distancefromtop={distanceFromTop} size={size}>
         {text}
     </HeaderAbsStyled>
   )
