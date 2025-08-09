@@ -5,14 +5,12 @@ import HeaderAbs from '../../components/Text/HeaderAbs/HeaderAbs';
 
 const Dashboard = () => {
   return (
-    <>
-    <HeaderAbs text='Hello, User'/>
     <DashboardContainer>
+      <HeaderAbs text='Hello, User'/>
       <CaptureCircleButton>
         Capture
       </CaptureCircleButton>
     </DashboardContainer>
-    </>
   )
 }
 
