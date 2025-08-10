@@ -8,4 +8,5 @@ export const AddApartmentContainer = styled.div`
   height: 100vh;
   width: 100%;
   gap: 20px;
+  z-index: 10000000;
 `;
