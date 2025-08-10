@@ -4,4 +4,7 @@ export interface Apartment {
     state: string;
     postalCode: string;
     country: string;
+    images: ApartmentImageData[];
 }
+
+export type ApartmentImageData = {link: string, name: string}
