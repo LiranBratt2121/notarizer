@@ -7,4 +7,6 @@ export interface Apartment {
     images: ApartmentImageData[];
 }
 
-export type ApartmentImageData = {link: string, name: string}
+export type ApartmentImageData = { link: string, name: string }
+
+export interface FirebaseApartment extends Apartment { id: string };
