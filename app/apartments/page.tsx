@@ -12,6 +12,14 @@ const Apartments = () => {
     navigate.replace('/apartments/add');
   }
   
+  if (!user) {
+    return (
+      <LoginNotice
+        headerMessage="Please log in to view your apartments."
+        buttonMessage="Log In"
+      />
+    )
+  }
   return (
     <ApartmentContainer>
         <Button width='80%' height='5rem' onClick={handleAddApartment}>

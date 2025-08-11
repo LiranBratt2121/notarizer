@@ -5,15 +5,18 @@ import { CaptureCircleButton } from './dashboard.components/CaptureCircleButton/
 import { DashboardContainer } from './dashboard.styles';
 import HeaderAbs from '../../components/Text/HeaderAbs/HeaderAbs';
 import { useAuth } from '@/hooks/useAuth';
+import LoginNotice from '@/components/LoginNotice/LoginNotice';
 
 const Dashboard = () => {
   const { user } = useAuth();
   
   if (!user) {
-    return <div>Please log in to access the dashboard.</div>;
+    return LoginNotice({
+      headerMessage: "Please log in to access your dashboard.",
+      buttonMessage: "Log In"
+    });
   }
 
-  console.log('User:', user);
   return (
     <DashboardContainer>
       <HeaderAbs text={`Hello, ${user.displayName}`}/>
