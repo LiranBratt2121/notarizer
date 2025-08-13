@@ -5,8 +5,6 @@ export const AddApartmentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
-  gap: 20px;
+  gap: 1rem;
   z-index: 10000000;
 `;
