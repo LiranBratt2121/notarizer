@@ -7,7 +7,6 @@ import HeaderAbs from '../../components/Text/HeaderAbs/HeaderAbs';
 import { useAuth } from '@/hooks/useAuth';
 import LoginNotice from '@/components/LoginNotice/LoginNotice';
 import { Camera } from '@/components/Camera/Camera';
-import { DropdownInput } from '@/components/Inputs/DropdownInput/DropdownInput';
 import LocationPrompt from './dashboard.components/LocationPrompt/LocationPrompt';
 import { useGoogleDrive } from '@/hooks/useGoogleDrive';
 import { useUserApartments } from '@/hooks/useUserApartments';

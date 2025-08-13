@@ -25,10 +25,10 @@ export async function POST(req: NextRequest) {
             webViewLink: data.webViewLink,
             webContentLink: data.webContentLink
         });
-    } catch (error: any) {
+    } catch (error) {
         console.error(error);
         return NextResponse.json(
-            { error: error?.message || "file permissions manipulation failed" },
+            { error: "file permissions manipulation failed" },
             { status: 500 }
         );
     }

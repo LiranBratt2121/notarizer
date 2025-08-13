@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { AddApartmentContainer } from './add.styles';
-import InputArray, { InputArrayProps, InputNaming } from '@/components/Inputs/InputArray/InputArray';
+import InputArray, { InputNaming } from '@/components/Inputs/InputArray/InputArray';
 import Button from '@/components/Buttons/Button/Button';
 import Header from '@/components/Text/Header/Header';
 import { Apartment } from '@/types/apartment';

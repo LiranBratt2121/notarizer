@@ -8,7 +8,6 @@ import AddressCardList from './apartments.components/AddressCardList/AddressCard
 import Header from '@/components/Text/Header/Header';
 import { useAuth } from '@/hooks/useAuth';
 import LoginNotice from '@/components/LoginNotice/LoginNotice';
-import { FirebaseApartment } from '@/types/apartment';
 import { useUserApartments } from '@/hooks/useUserApartments';
 
 

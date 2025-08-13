@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { ImageCardListContainer } from './ImageCardList.styles';
-import ImageCard, { ImageCardProps } from '../ImageCard';
-import Image from 'next/image';
+import ImageCard, {  } from '../ImageCard';
 import { useGoogleDrive } from '@/hooks/useGoogleDrive';
 import { ApartmentImageData } from '@/types/apartment';
 import LoadingThreeDot from '@/components/LoadingBar/LoadingThreeDot/LoadingThreeDot';
@@ -42,7 +41,7 @@ const ImageCardList = ({ images }: ImageCardListProps) => {
         fetchImages().then(() =>
             setLoading(false)
         );
-    }, [])
+    })
 
 
     return (

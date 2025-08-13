@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MenuButton from "@/components/Buttons/MenuButton/MenuButton";
 import { MenuBarContainer } from "./MenuBar.styles";
 import Button from "../Buttons/Button/Button";
