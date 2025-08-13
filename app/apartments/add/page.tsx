@@ -3,12 +3,10 @@
 import React, { useState } from 'react'
 import { AddApartmentContainer } from './add.styles';
 import InputArray, { InputArrayProps, InputNaming } from '@/components/Inputs/InputArray/InputArray';
-import HeaderAbs from '@/components/Text/HeaderAbs/HeaderAbs';
 import Button from '@/components/Buttons/Button/Button';
 import Header from '@/components/Text/Header/Header';
 import { Apartment } from '@/types/apartment';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/hooks/useAuth';
 import { useUserApartments } from '@/hooks/useUserApartments';
 import LoadingCircle from '@/components/LoadingBar/LoadingCircle/LoadingCircle';
 
@@ -56,7 +54,6 @@ const AddApartment = () => {
     await addApartment(newApartment)
 
     router.replace("/apartments");
-    console.log("Submitted values:", newApartment);
   }
 
   return (
