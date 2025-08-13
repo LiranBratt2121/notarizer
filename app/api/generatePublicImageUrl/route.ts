@@ -21,8 +21,6 @@ export async function POST(req: NextRequest) {
             fields: "webViewLink,webContentLink"
         });
 
-        console.log(data)
-
         return NextResponse.json({
             webViewLink: data.webViewLink,
             webContentLink: data.webContentLink
