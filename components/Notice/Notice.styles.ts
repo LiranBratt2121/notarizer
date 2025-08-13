@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const LoginNoticeContainer = styled.div`
+export const NoticeContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
