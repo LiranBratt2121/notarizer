@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { ImageCardListContainer } from './ImageCardList.styles';
-import ImageCard, {  } from '../ImageCard';
+import ImageCard, { } from '../ImageCard';
 import { useGoogleDrive } from '@/hooks/useGoogleDrive';
 import { ApartmentImageData } from '@/types/apartment';
 import LoadingThreeDot from '@/components/LoadingBar/LoadingThreeDot/LoadingThreeDot';
@@ -24,6 +24,8 @@ const ImageCardList = ({ images }: ImageCardListProps) => {
 
     useEffect(() => {
         const fetchImages = async () => {
+            setLoading(true);
+
             const data = await Promise.all(images.map(async ({ link, name }) => {
                 const id = getId(link);
                 const base64 = await fetchDriveImageBase64(id);
@@ -35,14 +37,11 @@ const ImageCardList = ({ images }: ImageCardListProps) => {
             }));
 
             setImages(data);
+            setLoading(false);
         }
 
-        setLoading(true);
-        fetchImages().then(() =>
-            setLoading(false)
-        );
-    })
-
+        fetchImages();
+    }, [images])
 
     return (
         <ImageCardListContainer>
