@@ -9,4 +9,5 @@ export const LoadingContainer = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  z-index: 9999999999;
 `;
