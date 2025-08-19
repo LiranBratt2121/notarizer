@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import MenuButton from "@/components/Buttons/MenuButton/MenuButton";
 import { MenuBarContainer } from "./MenuBar.styles";
-import Button from "../Buttons/Button/Button";
-import Header from "../Text/Header/Header";
+import Button from "../../../Buttons/Button/Button";
+import Header from "../../../Text/Header/Header";
 
 import { useRouter } from "next/navigation";
 
@@ -23,7 +23,10 @@ export default function MenuBar() {
   const toggleMenu = () => setClicked(prev => !prev);
 
   const handleNavigation = (target?: string) => {
-    if (!target) return;
+    if (!target) { 
+      return;
+    };
+    
     setClicked(false);
     router.replace(target);
   };
