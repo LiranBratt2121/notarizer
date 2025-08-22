@@ -1,19 +1,20 @@
 import React from 'react'
-import { ImageCardContainer, ImageStyled } from './ImageCard.styles';
 import { ApartmentImageData } from '@/types/apartment';
 import Header from '../Text/Header/Header';
+import InfoCard from './components/InfoCard/InfoCard';
+import { ImageWrapper, ImageStyled } from './ImageCard.styles';
 
 export interface ImageCardProps extends ApartmentImageData {
     width: number;
     height: number;
 }
 
-const ImageCard = ({ link, name, width, height }: ImageCardProps) => {
+const ImageCard = ({ link, name, width, height, timestamp}: ImageCardProps) => {
     return (
-        <ImageCardContainer>
-            <Header text={name} />
+        <ImageWrapper>
             <ImageStyled src={link} alt={name} width={width} height={height} />
-        </ImageCardContainer>
+            <InfoCard title={name} date={timestamp?.toDate()}/>
+        </ImageWrapper>
     )
 }
 
