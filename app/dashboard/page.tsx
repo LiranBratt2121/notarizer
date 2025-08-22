@@ -13,7 +13,7 @@ import { useUserApartments } from '@/hooks/useUserApartments';
 import Notice from '@/components/Notice/Notice';
 import { FormData } from './dashboard.components/LocationPrompt/LocationPrompt';
 import LoadingThreeDot from '@/components/LoadingBar/LoadingThreeDot/LoadingThreeDot';
-
+import { Timestamp } from "firebase/firestore"
 
 const Dashboard = () => {
   const [inCaptureMode, setInCaptureMode] = useState(false);
@@ -56,7 +56,7 @@ const Dashboard = () => {
       return;
     }
 
-    await addImageToApartment(id, {link: webContentLink, name: name});
+    await addImageToApartment(id, {link: webContentLink, name: name, timestamp: Timestamp.now()});
     
     setPopupOpen(false);
     setLoading(false);

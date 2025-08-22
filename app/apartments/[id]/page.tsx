@@ -7,7 +7,7 @@ import LoginNotice from '@/components/LoginNotice/LoginNotice';
 import { useUserApartments } from '@/hooks/useUserApartments';
 import Notice from '@/components/Notice/Notice';
 import { AddApartmentContainer } from '../add/add.styles';
-import ImageCardList from '@/components/ImageCard/ImageCardList/ImageCardList';
+import ImageCardList from '@/components/ImageCard/components/ImageCardList/ImageCardList';
 import Header from '@/components/Text/Header/Header';
 
 const ImageGallery = () => {
