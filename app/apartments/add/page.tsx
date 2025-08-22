@@ -11,43 +11,50 @@ import { useUserApartments } from '@/hooks/useUserApartments';
 import LoadingCircle from '@/components/LoadingBar/LoadingCircle/LoadingCircle';
 
 const fields: InputNaming[] = [
-  { header: "Street Address", placeholder: "Enter street address", id: "streetAddress" },
-  { header: "City", placeholder: "Enter city", id: "city" },
-  { header: "State", placeholder: "Enter state", id: "state" },
-  { header: "Postal Code", placeholder: "Enter Postal code", id: "postalCode" },
+  { header: "Street Address", placeholder: "Enter street address", id: "streetAddress"},
+  { header: "City", placeholder: "Enter city", id: "city"},
+  { header: "State", placeholder: "Enter state", id: "state", defaultValue: "No State" },
+  { header: "Postal Code", placeholder: "Enter Postal code", id: "postalCode", defaultValue: "No Postal code"},
   { header: "Country", placeholder: "Enter country", id: "country" },
 ]
 
 const AddApartment = () => {
+  const router = useRouter();
+
   const [values, setValues] = useState<Record<string, string>>(
     Object.fromEntries(fields.map(field => [field.id, ""]))
   );
-  
+
   const { addApartment, isSavingApartment } = useUserApartments();
 
-  const router = useRouter();
 
   const handleInputChange = (id: string, newValue: string) => {
     setValues(prev => ({ ...prev, [id]: newValue }));
   };
 
-  const validateInputs = () => {
-    return Object.values(values).every(value => value.trim() !== "");
-  }
-
   const handleSubmit = async () => {
-    if (!validateInputs()) {
-      console.error("All fields must be filled out.");
-      alert("Please fill out all fields.");
-      return;
+    const requiredFields = fields.filter(field => !field.defaultValue)
+
+    for (const field of requiredFields) {
+      if (values[field.id].trim() === "") {
+        alert(`Please fill out the ${field.header} field.`);
+        return;
+      }
     }
 
+    const filledValues = Object.fromEntries(
+      fields.map(field => [
+        field.id,
+        values[field.id].trim() !== "" ? values[field.id] : field.defaultValue ?? ""
+      ])
+    );
+
     const newApartment: Apartment = {
-      street: values.streetAddress,
-      city: values.city,
-      state: values.state,
-      postalCode: values.postalCode,
-      country: values.country,
+      street: filledValues.streetAddress,
+      city: filledValues.city,
+      state: filledValues.state,
+      postalCode: filledValues.postalCode,
+      country: filledValues.country,
       images: [],
     };
 
