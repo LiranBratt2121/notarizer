@@ -6,3 +6,8 @@ export const InputArrayContainer = styled.div`
     justify-content: center;
     gap: 10px;
 `
+
+export const TextAlert = styled.div`
+    font-family: "Roboto", Arial, sans-serif;
+    color: black;
+`
