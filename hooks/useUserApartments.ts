@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
 import { collection, doc, onSnapshot, setDoc, updateDoc, arrayUnion, query, orderBy } from "firebase/firestore";
-import { Apartment, FirebaseApartment } from "@/types/apartment";
+import { Apartment, FirebaseApartment, ApartmentImageData } from "@/types/apartment";
 import { useAuth } from "./useAuth";
 
-export type ApartmentImageData = { link: string; name: string };
 
 export function useUserApartments() {
     const [apartments, setApartments] = useState<(FirebaseApartment)[]>([]);
