@@ -1,6 +1,5 @@
 import React from 'react'
 import { ApartmentImageData } from '@/types/apartment';
-import Header from '../Text/Header/Header';
 import InfoCard from './components/InfoCard/InfoCard';
 import { ImageWrapper, ImageStyled } from './ImageCard.styles';
 
